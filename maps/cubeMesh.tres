@@ -1,0 +1,9 @@
+[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://dpeshsx15tmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdoui"]
+albedo_color = Color(0.588235, 0.607843, 0.545098, 1)
+metallic = 0.31
+roughness = 0.7
+
+[resource]
+material = SubResource( "StandardMaterial3D_gdoui" )

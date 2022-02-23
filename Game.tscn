@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://ed8awovvsu8e"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_hqm14"]
+[ext_resource type="PackedScene" uid="uid://dmfaa6nh31kjv" path="res://maps/map1.tscn" id="1_yldv6"]
+[ext_resource type="PackedScene" uid="uid://d0vbcey7nu8xq" path="res://units/Unit.tscn" id="3_x5epj"]
+[ext_resource type="PackedScene" uid="uid://ct8v5xq2vxgum" path="res://ux/GameUI.tscn" id="4_50okj"]
+[ext_resource type="PackedScene" uid="uid://bt05sf3jcsppm" path="res://towers/TowerGun.tscn" id="5_irdv7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5ux45"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1j8f"]
+albedo_color = Color(0.0823529, 0.52549, 0.592157, 1)
+
+[node name="Game" type="Node3D"]
+script = ExtResource( "1_hqm14" )
+
+[node name="Map" parent="." instance=ExtResource( "1_yldv6" )]
+
+[node name="Team1" type="Node" parent="."]
+
+[node name="Units" type="Node" parent="Team1"]
+
+[node name="Node3D" parent="Team1/Units" instance=ExtResource( "3_x5epj" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59139, 0, -3.50541)
+
+[node name="Towers" type="Node" parent="Team1"]
+
+[node name="TowerGun" parent="Team1/Towers" instance=ExtResource( "5_irdv7" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
+
+[node name="TowerGun2" parent="Team1/Towers" instance=ExtResource( "5_irdv7" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2)
+
+[node name="TowerGun3" parent="Team1/Towers" instance=ExtResource( "5_irdv7" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="Team2" type="Node" parent="."]
+
+[node name="Units" type="Node" parent="Team2"]
+
+[node name="Towers" type="Node" parent="Team2"]
+
+[node name="GameUI" parent="." instance=ExtResource( "4_50okj" )]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -2, 20, 6)
+size = 28.0
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -15, 7, -17)
+light_energy = 3.0
+light_indirect_energy = 0.0
+shadow_enabled = true
+
+[node name="ZeroZero" type="MeshInstance3D" parent="."]
+mesh = SubResource( "CylinderMesh_5ux45" )
+surface_material_override/0 = SubResource( "StandardMaterial3D_y1j8f" )

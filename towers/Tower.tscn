@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://pg50re7lkdnw"]
+
+[ext_resource type="Script" path="res://towers/Tower.gd" id="1_882iu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mf5kh"]
+radius = 3.0
+height = 3.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0pmkl"]
+height = 3.0
+
+[node name="Tower" type="Node3D"]
+script = ExtResource( "1_882iu" )
+
+[node name="Head" type="MeshInstance3D" parent="."]
+
+[node name="Cannon" type="MeshInstance3D" parent="Head"]
+
+[node name="Neck" type="MeshInstance3D" parent="."]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+
+[node name="Area3DMax" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DMax"]
+shape = SubResource( "CylinderShape3D_mf5kh" )
+
+[node name="Area3DMin" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DMin"]
+shape = SubResource( "CylinderShape3D_0pmkl" )
+
+[node name="Bullets" type="Node" parent="."]
+
+[connection signal="area_entered" from="Area3DMax" to="." method="_on_area_3d_max_area_entered"]
+[connection signal="area_exited" from="Area3DMax" to="." method="_on_area_3d_max_area_exited"]
+[connection signal="area_entered" from="Area3DMin" to="." method="_on_area_3d_min_area_entered"]
+[connection signal="area_exited" from="Area3DMin" to="." method="_on_area_3d_min_area_exited"]
+[connection signal="input_event" from="Area3DMin" to="." method="_on_area_3d_min_input_event"]
+[connection signal="mouse_entered" from="Area3DMin" to="." method="_on_area_3d_min_mouse_entered"]
+[connection signal="mouse_exited" from="Area3DMin" to="." method="_on_area_3d_min_mouse_exited"]

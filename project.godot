@@ -1,0 +1,76 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node3D",
+"class": &"Bullet",
+"language": &"GDScript",
+"path": "res://fx/Bullet.gd"
+}, {
+"base": "Node3D",
+"class": &"Game",
+"language": &"GDScript",
+"path": "res://Game.gd"
+}, {
+"base": "RefCounted",
+"class": &"Team",
+"language": &"GDScript",
+"path": "res://Team.gd"
+}, {
+"base": "Node3D",
+"class": &"Tower",
+"language": &"GDScript",
+"path": "res://towers/Tower.gd"
+}, {
+"base": "RefCounted",
+"class": &"TowerData",
+"language": &"GDScript",
+"path": "res://towers/TowerData.gd"
+}, {
+"base": "",
+"class": &"TowerGun",
+"language": &"GDScript",
+"path": "res://towers/TowerGun.gd"
+}, {
+"base": "Node3D",
+"class": &"Unit",
+"language": &"GDScript",
+"path": "res://units/Unit.gd"
+}, {
+"base": "RefCounted",
+"class": &"UnitData",
+"language": &"GDScript",
+"path": "res://units/UnitData.gd"
+}]
+_global_script_class_icons={
+"Bullet": "",
+"Game": "",
+"Team": "",
+"Tower": "",
+"TowerData": "",
+"TowerGun": "",
+"Unit": "",
+"UnitData": ""
+}
+
+[application]
+
+config/name="Camus"
+run/main_scene="res://Game.tscn"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0", "Vulkan Clustered")
+
+[input]
+
+leftClick={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
