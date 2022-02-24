@@ -37,3 +37,12 @@ func _on_button_pressed():
 	game.add_child(item);
 	pass # Replace with function body.
 
+
+
+func _on_button_2_pressed():
+	#print("button pressed")
+	game.mode = game.modeBuild;
+	var item = load("res://towers/Gun360.tscn").instantiate()
+	game.heldItem = item;
+	game.add_child(item);
+	pass # Replace with function body.

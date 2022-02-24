@@ -60,6 +60,7 @@ __meta__ = {
 offset_right = 48.0
 offset_bottom = 32.0
 rect_min_size = Vector2(48, 32)
+text = "gun"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,6 +70,7 @@ offset_left = 52.0
 offset_right = 100.0
 offset_bottom = 32.0
 rect_min_size = Vector2(48, 0)
+text = "360"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -125,3 +127,4 @@ rect_min_size = Vector2(48, 0)
 
 [connection signal="resized" from="." to="." method="_on_control_resized"]
 [connection signal="pressed" from="BuildButtons/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BuildButtons/Button2" to="." method="_on_button_2_pressed"]

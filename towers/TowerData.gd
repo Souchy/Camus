@@ -8,6 +8,7 @@ var attack = 10;
 var attackSpeed = 10;
 var penetration = 0;
 var range = 10;
+var bullet_time_s = 1;
 var flies = false;
 var camo = false;
 var antiAeral = false;

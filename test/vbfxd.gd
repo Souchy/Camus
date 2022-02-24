@@ -1,20 +1,10 @@
-class_name TowerGun extends "Tower.gd"
-
+extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	super._ready();
-	data.attack = 15;
-	data.range = 175;
-	data.bullet_time_s = 0.6;
-	#print("TowerGun ready")
+	print("hey 2nd script")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	super._process(delta)
-	get_tree().set_debug_collisions_hint(true) 
 	pass
-	
-
-

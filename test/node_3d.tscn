@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pdk2tf64mx6b"]
+
+[ext_resource type="Script" path="res://test/vbfxd.gd" id="1_e2t4s"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource( "1_e2t4s" )

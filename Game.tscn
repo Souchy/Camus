@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ed8awovvsu8e"]
+[gd_scene load_steps=8 format=3 uid="uid://7lr76822fgta"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_hqm14"]
 [ext_resource type="PackedScene" uid="uid://dmfaa6nh31kjv" path="res://maps/map1.tscn" id="1_yldv6"]
@@ -27,12 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59139, 0, -3.50541)
 
 [node name="TowerGun" parent="Team1/Towers" instance=ExtResource( "5_irdv7" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
-
-[node name="TowerGun2" parent="Team1/Towers" instance=ExtResource( "5_irdv7" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2)
-
-[node name="TowerGun3" parent="Team1/Towers" instance=ExtResource( "5_irdv7" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
 
 [node name="Team2" type="Node" parent="."]
 

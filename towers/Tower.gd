@@ -23,6 +23,7 @@ func _physics_process(delta):
 func shoot():
 	var bullet = load("res://fx/Bullet.tscn").instantiate()
 	bullet.set_name("bullet")
+	bullet.max_time_s = data.bullet_time_s;
 	bullet.position.x = self.position.x;
 	bullet.position.z = self.position.z;
 	bullet.direction = get_node("Head").rotation;
