@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://e07hxnwvef2o"]
+
+[node name="GameOverPlayerStats" type="VBoxContainer"]
+offset_left = 32.0
+offset_top = 87.0
+offset_right = 72.0
+offset_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblPlayer" type="Label" parent="."]
+offset_right = 69.0
+offset_bottom = 26.0
+text = "Souchy"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 30.0
+offset_right = 69.0
+offset_bottom = 56.0
+
+[node name="lblGold" type="Label" parent="HBoxContainer"]
+offset_right = 36.0
+offset_bottom = 26.0
+text = "Gold"
+
+[node name="lblGoldValue" type="Label" parent="HBoxContainer"]
+offset_left = 40.0
+offset_right = 49.0
+offset_bottom = 26.0
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_top = 60.0
+offset_right = 69.0
+offset_bottom = 86.0
+
+[node name="lblTowers" type="Label" parent="HBoxContainer2"]
+offset_right = 56.0
+offset_bottom = 26.0
+text = "Towers"
+
+[node name="lblTowersValue" type="Label" parent="HBoxContainer2"]
+offset_left = 60.0
+offset_right = 69.0
+offset_bottom = 26.0
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+offset_top = 90.0
+offset_right = 69.0
+offset_bottom = 116.0
+
+[node name="lblUnits" type="Label" parent="HBoxContainer3"]
+offset_right = 40.0
+offset_bottom = 26.0
+text = "Units
+"
+
+[node name="lblUnitsValue" type="Label" parent="HBoxContainer3"]
+offset_left = 44.0
+offset_right = 53.0
+offset_bottom = 26.0
+text = "0"

@@ -10,60 +10,72 @@ config_version=5
 
 _global_script_classes=[{
 "base": "Node3D",
+"class": &"Base",
+"language": &"GDScript",
+"path": "res://models/Base.gd"
+}, {
+"base": "Node3D",
 "class": &"Bullet",
 "language": &"GDScript",
-"path": "res://fx/Bullet.gd"
+"path": "res://models/Bullet.gd"
+}, {
+"base": "RefCounted",
+"class": &"DataBullet",
+"language": &"GDScript",
+"path": "res://data/DataBullet.gd"
+}, {
+"base": "RefCounted",
+"class": &"DataTower",
+"language": &"GDScript",
+"path": "res://data/DataTower.gd"
+}, {
+"base": "RefCounted",
+"class": &"DataUnit",
+"language": &"GDScript",
+"path": "res://data/DataUnit.gd"
 }, {
 "base": "Node3D",
 "class": &"Game",
 "language": &"GDScript",
 "path": "res://Game.gd"
 }, {
-"base": "",
+"base": "Tower",
 "class": &"Gun360",
 "language": &"GDScript",
-"path": "res://towers/Gun360.gd"
+"path": "res://data/towers/Gun360.gd"
+}, {
+"base": "Node",
+"class": &"PlayerAI",
+"language": &"GDScript",
+"path": "res://PlayerAI.gd"
 }, {
 "base": "RefCounted",
 "class": &"Team",
 "language": &"GDScript",
-"path": "res://Team.gd"
+"path": "res://models/Team.gd"
 }, {
 "base": "Node3D",
 "class": &"Tower",
 "language": &"GDScript",
-"path": "res://towers/Tower.gd"
-}, {
-"base": "RefCounted",
-"class": &"TowerData",
-"language": &"GDScript",
-"path": "res://towers/TowerData.gd"
-}, {
-"base": "",
-"class": &"TowerGun",
-"language": &"GDScript",
-"path": "res://towers/TowerGun.gd"
+"path": "res://models/Tower.gd"
 }, {
 "base": "Node3D",
 "class": &"Unit",
 "language": &"GDScript",
-"path": "res://units/Unit.gd"
-}, {
-"base": "RefCounted",
-"class": &"UnitData",
-"language": &"GDScript",
-"path": "res://units/UnitData.gd"
+"path": "res://models/Unit.gd"
 }]
 _global_script_class_icons={
+"Base": "",
 "Bullet": "",
+"DataBullet": "",
+"DataTower": "",
+"DataUnit": "",
 "Game": "",
 "Gun360": "",
+"PlayerAI": "",
 "Team": "",
 "Tower": "",
-"TowerData": "",
-"TowerGun": "",
-"Unit": "",
-"UnitData": ""
+"Unit": ""
 }
 
 [application]
@@ -73,6 +85,16 @@ run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 
+[autoload]
+
+GameConstants="*res://data/GameConstants.gd"
+GameData="*res://data/GameData.gd"
+Client="*res://net/client.gd"
+
+[display]
+
+window/vsync/vsync_mode=0
+
 [input]
 
 leftClick={
@@ -80,3 +102,7 @@ leftClick={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[rendering]
+
+anti_aliasing/quality/msaa=3

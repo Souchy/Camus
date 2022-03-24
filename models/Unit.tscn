@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://l8ad7jhmsdt"]
+
+[ext_resource type="Script" path="res://models/Unit.gd" id="1_rbfde"]
+[ext_resource type="PackedScene" uid="uid://c84cn4gypa33a" path="res://ux/HealthBar.tscn" id="2_cmfp8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l76ue"]
+albedo_color = Color(0.0470588, 0.6, 0.176471, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t2bc5"]
+radius = 0.3
+height = 1.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_h1ul6"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5y0u"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xqpw"]
+material = SubResource( "StandardMaterial3D_c5y0u" )
+size = Vector3(0.3, 0.1, 0.1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8e2av"]
+radius = 0.3
+height = 1.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_30xvo"]
+radius = 2.0
+
+[node name="Unit" type="Node3D"]
+script = ExtResource( "1_rbfde" )
+
+[node name="Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+material_override = SubResource( "StandardMaterial3D_l76ue" )
+mesh = SubResource( "CapsuleMesh_t2bc5" )
+
+[node name="Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+mesh = SubResource( "SphereMesh_h1ul6" )
+
+[node name="Eyes" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+mesh = SubResource( "BoxMesh_0xqpw" )
+
+[node name="HealthBar" parent="." instance=ExtResource( "2_cmfp8" )]
+
+[node name="HitBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource( "CapsuleShape3D_8e2av" )
+
+[node name="Range" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource( "CylinderShape3D_30xvo" )
+
+[node name="Bullets" type="Node" parent="."]
+
+[connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_range_area_exited"]

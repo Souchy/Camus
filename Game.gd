@@ -1,7 +1,8 @@
 class_name Game extends Node3D
 
-var team1:Team = Team.new();
-var team2:Team = Team.new();
+var team1:Team = Team.new(0);
+var team2:Team = Team.new(1);
+# current player on this client
 var playerTeam:Team = team1;
 
 var mode = 0;
@@ -11,13 +12,33 @@ const modeEdit = 2; # upgrade / edit parameters
 const modeResearch = 3; # research tab
 
 var heldItem:Node3D;
+#var AI:PlayerAI = null;
+
+var goldGenTime = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#$Team2/Towers/TowerGun2.queue_free()
+	#AI = PlayerAI.new();
+	#add_child(AI);
+	if(false): 
+		$AI.queue_free()
+	pass
+
+func getTeam(team: int):
+	if(team == 0): return team1;
+	elif(team == 1): return team2;
+	
+func otherTeam(team: int):
+	if(team == 0): return team2;
+	elif(team == 1): return team1;
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#if(AI != null):
+		#print("ai not null")
+	#	AI._process(delta)
 	if(mode == modeBuild && heldItem != null):
 		#print("mode build")
 		var mouse = getMouseWorldPos();
@@ -25,21 +46,22 @@ func _process(delta):
 		heldItem.position.y = 0
 		heldItem.position.z = mouse.z
 		if(Input.is_action_just_pressed("leftClick")):
-			#print("placed turret at: ", mouse)
-			remove_child(heldItem)
-			get_node("Team1/Towers").add_child(heldItem)
-			heldItem.active = true
-			mode = modeNormal
-			heldItem = null;
-	
+			placeTower();
+			
+	# gold gen +5 per second for test
+	goldGenTime += delta;
+	if(goldGenTime > 1):
+		team1.gold += 5;
+		team2.gold += 5;
+		goldGenTime = 0;
+		
 	pass
 
 
-func _on_control_my_signal(extra_arg_0):
-	print("GAME ON SIGNAL");
-	pass # Replace with function body.
-
-
+static func delete_children(node):
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free()
 
 func getMouseWorldPos():
 	var mouse_position = get_viewport().get_mouse_position();
@@ -57,3 +79,48 @@ func getMouseWorldPos():
 	if not intersection.is_empty():
 		pos = intersection.position;
 	return pos;
+
+
+func buildTower(team: Team, towerName: String):
+	var item = load("res://data/towers/"+towerName+".tscn").instantiate()
+	var t = team.team;
+	item.data.team = t;
+	item.team = t;
+	if(team == playerTeam):
+		# put tower in held item temporarily for placing position
+		mode = modeBuild;
+		heldItem = item;
+		add_child(item);
+		return item;
+	else:
+		# add tower directly to team 2 towers
+		get_node("Team2/Towers").add_child(item)
+		item.active = true;
+		team.gold -= item.data.cost;
+		team.towers.push_back(item);
+		return item;
+
+func placeTower():
+	#print("placed turret at: ", mouse)
+	remove_child(heldItem);
+	get_node("Team1/Towers").add_child(heldItem);
+	playerTeam.gold -= heldItem.data.cost;
+	playerTeam.towers.push_back(heldItem);
+	heldItem.active = true;
+	mode = modeNormal;
+	heldItem = null;
+	pass
+
+func buyUnits(team: Team, towerSource: Tower, unitName: String):
+	var path = get_node("Map/Path3D") as Path3D;
+	var unit = load("res://models/"+unitName+".tscn").instantiate();
+	var follow = PathFollow3D.new();
+	follow.loop = false;
+	unit.data.team = team.team;
+	team.gold -= unit.data.cost;
+	unit.active = true;
+	follow.add_child(unit);
+	path.add_child(follow);
+	if(towerSource != null):
+		print("buy units from tower: ", towerSource)
+	pass

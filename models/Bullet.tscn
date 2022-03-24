@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://models/Bullet.gd" id="1_sicut"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_652bk"]
+albedo_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+metallic = 0.9
+metallic_specular = 0.66
+roughness = 0.44
+
+[sub_resource type="SphereMesh" id="SphereMesh_ujmx6"]
+material = SubResource( "StandardMaterial3D_652bk" )
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d8o6u"]
+radius = 0.1
+
+[node name="Bullet" type="Node3D"]
+script = ExtResource( "1_sicut" )
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource( "SphereMesh_ujmx6" )
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource( "SphereShape3D_d8o6u" )
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

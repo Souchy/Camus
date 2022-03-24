@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://ycloue3etqem"]
+
+[ext_resource type="Script" path="res://assets/fx/lightning.gd" id="1_sy01q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dmp0a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tpil6"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="OpenSimplexNoise" id="OpenSimplexNoise_2x54h"]
+octaves = 1
+period = 12.8
+persistence = 1.0
+
+[sub_resource type="NoiseTexture" id="NoiseTexture_6qw8v"]
+noise = SubResource( "OpenSimplexNoise_2x54h" )
+
+[node name="Lightning" type="Node3D"]
+script = ExtResource( "1_sy01q" )
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+visible = false
+mesh = SubResource( "CapsuleMesh_dmp0a" )
+initial_velocity_min = 2.49
+initial_velocity_max = 2.49
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+visible = false
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(644, 57, 575, 171, 501, 299, 448, 430, 419, 592)
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+visible = false
+mesh = SubResource( "SphereMesh_tpil6" )
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
+texture = SubResource( "NoiseTexture_6qw8v" )

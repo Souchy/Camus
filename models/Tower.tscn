@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp2fihpsttias"]
+
+[ext_resource type="Script" path="res://models/Tower.gd" id="1_882iu"]
+[ext_resource type="PackedScene" uid="uid://c84cn4gypa33a" path="res://ux/HealthBar.tscn" id="2_dff50"]
+[ext_resource type="AudioStream" uid="uid://c44shp64wo62w" path="res://assets/sound/footstep_carpet_000.ogg" id="3_2bawt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0pmkl"]
+height = 3.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mf5kh"]
+radius = 3.0
+height = 3.0
+
+[node name="Tower" type="Node3D"]
+script = ExtResource( "1_882iu" )
+
+[node name="Head" type="MeshInstance3D" parent="."]
+
+[node name="Cannon" type="MeshInstance3D" parent="Head"]
+
+[node name="Neck" type="MeshInstance3D" parent="."]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+
+[node name="HitBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource( "CylinderShape3D_0pmkl" )
+
+[node name="Range" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
+shape = SubResource( "CylinderShape3D_mf5kh" )
+
+[node name="Bullets" type="Node" parent="."]
+
+[node name="HealthBar" parent="." instance=ExtResource( "2_dff50" )]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "3_2bawt" )
+unit_db = -15.0
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_area_3d_min_area_entered"]
+[connection signal="area_exited" from="HitBox" to="." method="_on_area_3d_min_area_exited"]
+[connection signal="input_event" from="HitBox" to="." method="_on_area_3d_min_input_event"]
+[connection signal="mouse_entered" from="HitBox" to="." method="_on_area_3d_min_mouse_entered"]
+[connection signal="mouse_exited" from="HitBox" to="." method="_on_area_3d_min_mouse_exited"]
+[connection signal="area_entered" from="Range" to="." method="_on_area_3d_max_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_area_3d_max_area_exited"]

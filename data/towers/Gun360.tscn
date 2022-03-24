@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" path="res://models/Tower.tscn" id="1_xqqn8"]
+[ext_resource type="Script" path="res://data/towers/Gun360.gd" id="2_6p7qs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ndh8"]
+albedo_color = Color(1, 0.513726, 0.819608, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_om6ws"]
+material = SubResource( "StandardMaterial3D_4ndh8" )
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xam6t"]
+albedo_color = Color(0.521569, 0.521569, 0.521569, 1)
+metallic = 0.87
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_euni0"]
+material = SubResource( "StandardMaterial3D_xam6t" )
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fiyea"]
+albedo_color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bepup"]
+material = SubResource( "StandardMaterial3D_fiyea" )
+height = 0.6
+
+[node name="Gun360" instance=ExtResource( "1_xqqn8" )]
+script = ExtResource( "2_6p7qs" )
+
+[node name="Head" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource( "CylinderMesh_om6ws" )
+
+[node name="Cannon" parent="Head" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource( "CylinderMesh_euni0" )
+
+[node name="Cannon1" type="MeshInstance3D" parent="Head" index="1"]
+transform = Transform3D(0.707107, 0.707107, 0, 0, 0, -1, -0.707107, 0.707107, 0, 0, 0, 0)
+mesh = SubResource( "CylinderMesh_euni0" )
+
+[node name="Cannon2" type="MeshInstance3D" parent="Head" index="2"]
+transform = Transform3D(5.96046e-08, 1, 0, 0, 5.96046e-08, -1, -1, 0, 5.96046e-08, 0, 0, 0)
+mesh = SubResource( "CylinderMesh_euni0" )
+
+[node name="Cannon3" type="MeshInstance3D" parent="Head" index="3"]
+transform = Transform3D(-0.707107, 0.707107, 0, 0, 0, -1, -0.707107, -0.707107, 0, 0, 0, 0)
+mesh = SubResource( "CylinderMesh_euni0" )
+
+[node name="Base" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource( "CylinderMesh_bepup" )
