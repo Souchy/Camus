@@ -19,13 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="example.cpp" />
+    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="register_types.cpp" />
-    <ClCompile Include="src\person.cpp" />
     <ClCompile Include="Tower.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="example.h" />
+    <ClInclude Include="Projectile.h" />
     <ClInclude Include="register_types.h" />
     <ClInclude Include="Tower.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="Weapon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Tower.obj" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -88,6 +98,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <SourcePath>$(VC_SourcePath);</SourcePath>
+    <IncludePath>C:\Robyn\godot\Camus\godot-cpp\godot-headers;C:\Robyn\godot\Camus\godot-cpp\gen\include;C:\Robyn\godot\Camus\godot-cpp\include;C:\Robyn\godot\Camus\godot-cpp;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Robyn\godot\Camus\godot-cpp\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

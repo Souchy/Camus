@@ -19,24 +19,54 @@
     <Filter Include="Fichiers d%27en-tête\main">
       <UniqueIdentifier>{ec5bec0d-cd41-4b57-80e2-956e9a584c82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\models">
+      <UniqueIdentifier>{0457abbd-2d37-4b7f-b444-2f6f022972f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\models">
+      <UniqueIdentifier>{868fda92-51e3-409b-83d1-0e38cfa797ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\person.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Tower.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="register_types.cpp">
       <Filter>Fichiers sources\main</Filter>
     </ClCompile>
+    <ClCompile Include="example.cpp">
+      <Filter>Fichiers sources\main</Filter>
+    </ClCompile>
+    <ClCompile Include="Tower.cpp">
+      <Filter>Fichiers sources\models</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Fichiers sources\models</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Fichiers sources\models</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Fichiers sources\models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tower.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="register_types.h">
       <Filter>Fichiers d%27en-tête\main</Filter>
     </ClInclude>
+    <ClInclude Include="example.h">
+      <Filter>Fichiers d%27en-tête\main</Filter>
+    </ClInclude>
+    <ClInclude Include="Tower.h">
+      <Filter>Fichiers d%27en-tête\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Fichiers d%27en-tête\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Fichiers d%27en-tête\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Fichiers d%27en-tête\models</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Tower.obj" />
   </ItemGroup>
 </Project>
