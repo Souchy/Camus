@@ -38,6 +38,21 @@
 
 using namespace godot;
 
+void Example::_bind_methods() {
+	ClassDB::bind_method(D_METHOD("get_custom_position"), &Example::get_custom_position);
+	ClassDB::bind_method(D_METHOD("set_custom_position", "position"), &Example::set_custom_position);
+	ADD_PROPERTY(PropertyInfo(Variant::VECTOR2, "custom_position"), "set_custom_position", "get_custom_position");
+}
+
+void Example::set_custom_position(const Vector2& pos) {
+	custom_position = pos;
+}
+
+Vector2 Example::get_custom_position() const {
+	return custom_position;
+}
+
+/*
 ExampleRef::ExampleRef() {
 	UtilityFunctions::print("ExampleRef created.");
 }
@@ -172,3 +187,4 @@ bool Example::_has_point(const Vector2& point) const {
 
 	return false;
 }
+*/

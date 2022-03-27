@@ -98,8 +98,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <SourcePath>$(VC_SourcePath);</SourcePath>
-    <IncludePath>C:\Robyn\godot\Camus\godot-cpp\godot-headers;C:\Robyn\godot\Camus\godot-cpp\gen\include;C:\Robyn\godot\Camus\godot-cpp\include;C:\Robyn\godot\Camus\godot-cpp;$(IncludePath)</IncludePath>
+    <IncludePath>$(IncludePath)</IncludePath>
     <LibraryPath>C:\Robyn\godot\Camus\godot-cpp\bin;$(LibraryPath)</LibraryPath>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -138,6 +140,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Robyn\godot\Camus\godot-cpp\include\godot_cpp\variant;C:\Robyn\godot\Camus\godot-cpp\include\godot_cpp\templates;C:\Robyn\godot\Camus\godot-cpp\include\godot_cpp\core;C:\Robyn\godot\Camus\godot-cpp\include\godot_cpp\classes;C:\Robyn\godot\Camus\godot-cpp\godot-headers;C:\Robyn\godot\Camus\godot-cpp\include;C:\Robyn\godot\Camus\godot-cpp\gen\include;C:\Robyn\godot\Camus\godot-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

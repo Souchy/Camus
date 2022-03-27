@@ -45,6 +45,21 @@
 
 using namespace godot;
 
+class Example : public Control {
+	GDCLASS(Example, Control);
+
+protected:
+	static void _bind_methods();
+
+private:
+	Vector2 custom_position;
+
+public:
+	void set_custom_position(const Vector2& pos);
+	Vector2 get_custom_position() const;
+};
+
+/*
 class ExampleRef : public RefCounted {
 	GDCLASS(ExampleRef, RefCounted);
 
@@ -101,5 +116,7 @@ public:
 };
 
 VARIANT_ENUM_CAST(Example, Constants);
+
+*/
 
 #endif // ! EXAMPLE_CLASS_H

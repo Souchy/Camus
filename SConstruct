@@ -25,6 +25,9 @@ bits = 64
 # Updates the environment with the option variables.
 opts.Update(env)
 
+env['platform']='windows'
+env['target']='debug'
+
 # Process some arguments
 if env['use_llvm']:
     env['CC'] = 'clang'
@@ -93,7 +96,18 @@ else:
 cpp_library += '.' + str(bits)
 
 # make sure our binding library is properly includes
-env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'gen/include/'])
+env.Append(CPPPATH=['.', 
+    godot_headers_path, 
+    godot_headers_path + "godot/", 
+    cpp_bindings_path + "*", 
+    cpp_bindings_path + 'include/', 
+    cpp_bindings_path + 'include/godot_cpp/', 
+    cpp_bindings_path + 'include/godot_cpp/classes/', 
+    cpp_bindings_path + 'include/godot_cpp/core/', 
+    cpp_bindings_path + 'include/godot_cpp/templates/', 
+    cpp_bindings_path + 'include/godot_cpp/variant/', 
+    cpp_bindings_path + 'gen/include/'
+])
 #env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/'])
 env.Append(LIBPATH=[cpp_bindings_path + 'bin/'])
 env.Append(LIBS=[cpp_library])

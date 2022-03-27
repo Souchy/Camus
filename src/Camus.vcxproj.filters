@@ -27,12 +27,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="register_types.cpp">
-      <Filter>Fichiers sources\main</Filter>
-    </ClCompile>
-    <ClCompile Include="example.cpp">
-      <Filter>Fichiers sources\main</Filter>
-    </ClCompile>
     <ClCompile Include="Tower.cpp">
       <Filter>Fichiers sources\models</Filter>
     </ClCompile>
@@ -45,14 +39,14 @@
     <ClCompile Include="Projectile.cpp">
       <Filter>Fichiers sources\models</Filter>
     </ClCompile>
+    <ClCompile Include="example.cpp">
+      <Filter>Fichiers sources\main</Filter>
+    </ClCompile>
+    <ClCompile Include="register_types.cpp">
+      <Filter>Fichiers sources\main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="register_types.h">
-      <Filter>Fichiers d%27en-tête\main</Filter>
-    </ClInclude>
-    <ClInclude Include="example.h">
-      <Filter>Fichiers d%27en-tête\main</Filter>
-    </ClInclude>
     <ClInclude Include="Tower.h">
       <Filter>Fichiers d%27en-tête\models</Filter>
     </ClInclude>
@@ -64,6 +58,12 @@
     </ClInclude>
     <ClInclude Include="Projectile.h">
       <Filter>Fichiers d%27en-tête\models</Filter>
+    </ClInclude>
+    <ClInclude Include="example.h">
+      <Filter>Fichiers d%27en-tête\main</Filter>
+    </ClInclude>
+    <ClInclude Include="register_types.h">
+      <Filter>Fichiers d%27en-tête\main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
