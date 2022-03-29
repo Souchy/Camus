@@ -55,6 +55,8 @@ private:
 	Vector2 custom_position;
 
 public:
+	Example();
+	~Example();
 	void set_custom_position(const Vector2& pos);
 	Vector2 get_custom_position() const;
 };

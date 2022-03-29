@@ -44,6 +44,14 @@ void Example::_bind_methods() {
 	ADD_PROPERTY(PropertyInfo(Variant::VECTOR2, "custom_position"), "set_custom_position", "get_custom_position");
 }
 
+Example::Example() {
+	UtilityFunctions::print("Constructor.");
+}
+
+Example::~Example() {
+	UtilityFunctions::print("Destructor.");
+}
+
 void Example::set_custom_position(const Vector2& pos) {
 	custom_position = pos;
 }

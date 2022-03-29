@@ -38,21 +38,41 @@
 
 #include "example.h"
 
-
 using namespace godot;
 
-void register_example_types() {
+
+/// <summary>
+/// Register my library's types
+/// </summary>
+void register_types() {
 	ClassDB::register_class<Example>();
 }
 
-GDNativeBool GDN_EXPORT example_library_init(const GDNativeInterface* p_interface, const GDNativeExtensionClassLibraryPtr p_library, GDNativeInitialization* r_initialization) {
-	godot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
+/// <summary>
+/// Unregister my library's types
+/// </summary>
+void unregister_types() {
 
-	init_obj.register_scene_initializer(register_example_types);
-	init_obj.register_scene_terminator(unregister_example_types);
-
-	return init_obj.init();
 }
+
+extern "C" {
+	/// <summary>
+	/// Library enter point
+	/// </summary>
+	/// <param name="p_interface"></param>
+	/// <param name="p_library"></param>
+	/// <param name="r_initialization"></param>
+	/// <returns></returns>
+	GDNativeBool GDN_EXPORT library_init(const GDNativeInterface* p_interface, const GDNativeExtensionClassLibraryPtr p_library, GDNativeInitialization* r_initialization) {
+		godot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
+
+		init_obj.register_scene_initializer(register_types);
+		init_obj.register_scene_terminator(unregister_types);
+
+		return init_obj.init();
+	}
+}
+
 
 /*
 void register_example_types() {
@@ -60,7 +80,6 @@ void register_example_types() {
 	ClassDB::register_class<Example>();
 }
 
-void unregister_example_types() {}
 
 extern "C" {
 

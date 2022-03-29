@@ -1,0 +1,7 @@
+[configuration]
+
+entry_symbol = "library_init"
+
+[libraries]
+
+windows.64.debug = "bin/libcamus.windows.debug.64.dll"

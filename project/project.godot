@@ -103,6 +103,10 @@ leftClick={
 ]
 }
 
+[native_extensions]
+
+paths=["res://camus.gdextension"]
+
 [rendering]
 
 anti_aliasing/quality/msaa=3
