@@ -40,7 +40,6 @@
 #include <godot_cpp/classes/control.hpp>
 #include <godot_cpp/classes/global_constants.hpp>
 #include <godot_cpp/classes/viewport.hpp>
-
 #include <godot_cpp/core/binder_common.hpp>
 
 using namespace godot;
@@ -60,6 +59,8 @@ public:
 	void set_custom_position(const Vector2& pos);
 	Vector2 get_custom_position() const;
 };
+
+#endif // ! EXAMPLE_CLASS_H
 
 /*
 class ExampleRef : public RefCounted {
@@ -119,6 +120,5 @@ public:
 
 VARIANT_ENUM_CAST(Example, Constants);
 
-*/
-
 #endif // ! EXAMPLE_CLASS_H
+*/

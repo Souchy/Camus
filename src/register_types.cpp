@@ -35,10 +35,11 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
+using namespace godot;
 
 #include "example.h"
-
-using namespace godot;
+#include "Tower.h"
+#include "EntityData.h"
 
 
 /// <summary>
@@ -46,6 +47,8 @@ using namespace godot;
 /// </summary>
 void register_types() {
 	ClassDB::register_class<Example>();
+	ClassDB::register_class<EntityData>();
+	ClassDB::register_class<Tower>();
 }
 
 /// <summary>
