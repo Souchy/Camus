@@ -62,7 +62,7 @@ public:
 	void setData(const Ref<EntityData>& dat);
 	Ref<EntityData> getData() const;
 
-	void _ready();
+	void _ready() override;
 	void _process(float delta);
 	
 	Unit* turn();

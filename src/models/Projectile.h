@@ -50,7 +50,7 @@ public:
     float percentSeeking = 1;
     bool active = true;
 
-	void _ready();
+	void _ready() override;
 	void _process(float delta);
 
 };

@@ -1,5 +1,5 @@
 
-#include "../../Tower.h"
+#include "../../models/Tower.h"
 
 class BasicTower : public Tower {
 

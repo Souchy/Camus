@@ -25,7 +25,7 @@ public:
 	HealthBar();
 	~HealthBar();
 
-	void _ready();
+	void _ready() override;
 	void _process(float delta);
 
     void update();

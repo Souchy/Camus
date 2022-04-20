@@ -173,3 +173,7 @@ void Tower::_on_area_3d_max_area_exited(Area3D area) {
 		}
 	}
 }
+
+void Tower::death() {
+
+}
