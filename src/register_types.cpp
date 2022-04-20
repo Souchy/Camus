@@ -37,9 +37,16 @@
 #include <godot_cpp/godot.hpp>
 using namespace godot;
 
-#include "example.h"
-#include "Tower.h"
-#include "EntityData.h"
+
+#include "Game.h"
+#include "models/example.h"
+#include "models/Wompa.h"
+#include "models/EntityData.h"
+#include "models/Tower.h"
+#include "models/Unit.h"
+#include "models/Projectile.h"
+#include "models/Weapon.h"
+#include "ux/HealthBar.h"
 
 
 /// <summary>
@@ -47,8 +54,14 @@ using namespace godot;
 /// </summary>
 void register_types() {
 	ClassDB::register_class<Example>();
+	ClassDB::register_class<Game>();
 	ClassDB::register_class<EntityData>();
 	ClassDB::register_class<Tower>();
+	ClassDB::register_class<Projectile>();
+	ClassDB::register_class<Unit>();
+	ClassDB::register_class<Wompa>();
+	//ClassDB::register_class<Weapon>();
+	ClassDB::register_class<HealthBar>();
 }
 
 /// <summary>

@@ -1,6 +1,4 @@
-
 #pragma once
-
 
 #include <godot_cpp/classes/node3d.hpp>
 #include <godot_cpp/classes/global_constants.hpp>
@@ -14,11 +12,8 @@ using namespace godot;
 #include "EntityData.h"
 using namespace std;
 
-
-class EntityData;
-
-class Tower : public Node3D {
-	GDCLASS(Tower, Node3D);
+class Wompa : public Node3D {
+	GDCLASS(Wompa, Node3D);
 
 protected:
 	static void _bind_methods();
@@ -27,13 +22,10 @@ private:
 	Ref<EntityData> data;
 
 public:
-	Tower();
-	~Tower();
-	//void setData(const EntityData& data);
-	//EntityData getData() const;
+	Wompa();
+	~Wompa();
 	void setData(const Ref<EntityData>& dat);
 	Ref<EntityData> getData() const;
 
-	//EntityData* return_extended_ref() const;
-	//Ref<EntityData> extended_ref_checks(Ref<EntityData> p_ref) const;
+    void _process(double delta) override;
 };

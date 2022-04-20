@@ -17,6 +17,7 @@ protected:
 
 private:
 	int team;
+	
 	string name;
 	int price;	// $ cost to buy
 	int bounty; // $ gain when killed
@@ -25,22 +26,26 @@ private:
 	double life;
 	double lifemax;
 	double armour;
+	bool aerial;
+	bool camo;
+
 	double attackDamage;
 	double attackTime; // how much time between attacks
 	double bulletTime; // how long a bullet lives
 	double penetration;
 	double range;
-
-	bool aerial;
-	bool camo;
 	bool antiAerial;
 	bool antiCamo;
+
 
 public:
 	EntityData();
 	~EntityData();
 	//void setData(const TowerData& data);
 	//TowerData getData() const;
+
+	void signal_update();
+	void test();
 
 	void setTeam(int team);
 	int getTeam();

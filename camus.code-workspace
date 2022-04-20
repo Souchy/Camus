@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.rh": "cpp",
+			"algorithm": "cpp",
+			"array": "cpp",
+			"atomic": "cpp",
+			"charconv": "cpp",
+			"istream": "cpp",
+			"map": "cpp",
+			"memory": "cpp",
+			"ostream": "cpp",
+			"ratio": "cpp",
+			"system_error": "cpp",
+			"vector": "cpp",
+			"xhash": "cpp",
+			"xlocale": "cpp",
+			"xlocbuf": "cpp",
+			"xlocmon": "cpp",
+			"xlocnum": "cpp",
+			"xstring": "cpp",
+			"xutility": "cpp",
+			"list": "cpp",
+			"type_traits": "cpp"
+		},
+		"workbench.colorCustomizations": {
+			//"tree.indentGuidesStroke": "#ff0000",
+			//"editorIndentGuide.activeBackground": "#ff0000",
+			//"editorIndentGuide.background": "#ff00ff"
+		},
+		"workbench.tree.indent": 12,
+		"workbench.tree.renderIndentGuides": "none",
+	}
+}

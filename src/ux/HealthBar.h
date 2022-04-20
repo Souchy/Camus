@@ -1,5 +1,6 @@
 #pragma once
 
+#include <godot_cpp/classes/sprite3d.hpp>
 #include <godot_cpp/classes/node3d.hpp>
 #include <vector>
 #include <godot_cpp/classes/global_constants.hpp>
@@ -10,29 +11,28 @@
 using namespace godot;
 
 #include <string>
-#include "Weapon.h"
-#include "EntityData.h"
-#include "Projectile.h"
 using namespace std;
 
-class Unit : public Node3D {
-	GDCLASS(Unit, Node3D);
+class HealthBar : public Sprite3D {
+	GDCLASS(HealthBar, Sprite3D);
 
 protected:
 	static void _bind_methods();
     
 private:
-	Ref<EntityData> data;
-	//Ref<Weapon> weapon;
 
 public:
-	Unit();
-	~Unit();
-	void setData(const Ref<EntityData>& dat);
-	Ref<EntityData> getData() const;
+	HealthBar();
+	~HealthBar();
 
 	void _ready();
 	void _process(float delta);
+
+    void update();
+    void setTeam(int team);
+
+    
+	void emit_custom_signal(const String& name, int value);
 
 };
 

@@ -59,7 +59,6 @@ __meta__ = {
 [node name="Button" type="Button" parent="BuildButtons"]
 offset_right = 48.0
 offset_bottom = 32.0
-rect_min_size = Vector2(48, 32)
 text = "gun"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,7 +68,6 @@ __meta__ = {
 offset_left = 52.0
 offset_right = 100.0
 offset_bottom = 32.0
-rect_min_size = Vector2(48, 0)
 text = "360"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -79,7 +77,6 @@ __meta__ = {
 offset_left = 104.0
 offset_right = 152.0
 offset_bottom = 32.0
-rect_min_size = Vector2(48, 0)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -88,7 +85,6 @@ __meta__ = {
 offset_left = 156.0
 offset_right = 204.0
 offset_bottom = 32.0
-rect_min_size = Vector2(48, 0)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -97,7 +93,6 @@ __meta__ = {
 offset_left = 208.0
 offset_right = 256.0
 offset_bottom = 32.0
-rect_min_size = Vector2(48, 0)
 text = "Unit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,7 +105,6 @@ offset_left = 123.0
 offset_top = -129.0
 offset_right = 366.0
 offset_bottom = -97.0
-rect_min_size = Vector2(48, 32)
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -118,13 +112,11 @@ __meta__ = {
 [node name="Button" type="Button" parent="UpgradeButtons"]
 offset_right = 48.0
 offset_bottom = 32.0
-rect_min_size = Vector2(48, 0)
 
 [node name="Button2" type="Button" parent="UpgradeButtons"]
 offset_left = 52.0
 offset_right = 100.0
 offset_bottom = 32.0
-rect_min_size = Vector2(48, 0)
 
 [node name="lblGold" type="Label" parent="."]
 anchor_left = 1.0

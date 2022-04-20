@@ -1,21 +1,25 @@
-
-
 #include <godot_cpp/classes/node3d.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/global_constants.hpp>
 #include <godot_cpp/classes/viewport.hpp>
 #include <godot_cpp/core/binder_common.hpp>
 #include "EntityData.h"
 using namespace godot;
 
+void EntityData::_bind_methods()
+{
+	// Signals.
+	ADD_SIGNAL(MethodInfo("update"));
+	ClassDB::bind_method(D_METHOD("signal_update"), &EntityData::signal_update);
 
+	ClassDB::bind_method(D_METHOD("test"), &EntityData::test);
 
-void EntityData::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("getTeam"), &EntityData::getTeam);
 	ClassDB::bind_method(D_METHOD("setTeam", "team"), &EntityData::setTeam);
-	ADD_PROPERTY(PropertyInfo(Variant::INT, "team"), "getTeam", "setTeam");
 
 	ADD_GROUP("Test group", "group_");
 	ADD_SUBGROUP("Test subgroup", "group_subgroup_");
+	ADD_PROPERTY(PropertyInfo(Variant::INT, "team"), "getTeam", "setTeam");
 }
 
 EntityData::EntityData()
@@ -26,6 +30,14 @@ EntityData::~EntityData()
 {
 }
 
+void EntityData::signal_update() { //(const String& name, int value) {
+	emit_signal("update"); //, name, value);
+}
+
+void EntityData::test()
+{
+	UtilityFunctions::print("EntityData tested.");
+}
 
 // --
 
@@ -161,9 +173,7 @@ double EntityData::getRange()
 	return range;
 }
 
-
 // --
-
 
 void EntityData::setAerial(bool aerial)
 {

@@ -10,29 +10,24 @@
 using namespace godot;
 
 #include <string>
-#include "Weapon.h"
-#include "EntityData.h"
-#include "Projectile.h"
 using namespace std;
 
-class Unit : public Node3D {
-	GDCLASS(Unit, Node3D);
+class Game : public Node3D {
+	GDCLASS(Game, Node3D);
 
 protected:
 	static void _bind_methods();
     
 private:
-	Ref<EntityData> data;
-	//Ref<Weapon> weapon;
 
 public:
-	Unit();
-	~Unit();
-	void setData(const Ref<EntityData>& dat);
-	Ref<EntityData> getData() const;
+	Game();
+	~Game();
 
 	void _ready();
 	void _process(float delta);
+
+	int otherTeam(int team);
 
 };
 

@@ -1,0 +1,113 @@
+{
+
+    "BasicTower": {
+        "name":"",
+        "price":"",
+        "bounty":"",
+        "ai":"",
+        
+        "life":"",
+        "lifemax":"",
+        "attackDamage":"",
+        "attackTime":"",
+        "bulletTime":"",
+        "armour":"",
+        "penetration":"",
+        "range":"",
+
+        "aerial":"",
+        "camo":"",
+        "antiAerial":"",
+        "antiCamo":""
+    },
+
+    "ShotgunTower": {
+        "name":"",
+        "price":"",
+        "bounty":"",
+        "ai":"",
+        
+        "life":"",
+        "lifemax":"",
+        "attackDamage":"",
+        "attackTime":"",
+        "bulletTime":"",
+        "armour":"",
+        "penetration":"",
+        "range":"",
+
+        
+        "aerial":"",
+        "camo":"",
+        "antiAerial":"",
+        "antiCamo":""
+    },
+
+    "SpreadTower": {
+        "name":"",
+        "price":"",
+        "bounty":"",
+        "ai":"",
+        
+        "life":"",
+        "lifemax":"",
+        "attackDamage":"",
+        "attackTime":"",
+        "bulletTime":"",
+        "armour":"",
+        "penetration":"",
+        "range":"",
+
+        
+        "aerial":"",
+        "camo":"",
+        "antiAerial":"",
+        "antiCamo":""
+    },
+
+    "SpinningTower": {
+        "name":"",
+        "price":"",
+        "bounty":"",
+        "ai":"",
+        
+        "life":"",
+        "lifemax":"",
+        "attackDamage":"",
+        "attackTime":"",
+        "bulletTime":"",
+        "armour":"",
+        "penetration":"",
+        "range":"",
+
+        
+        "aerial":"",
+        "camo":"",
+        "antiAerial":"",
+        "antiCamo":""
+    },
+
+    "CannonTower": {
+        "name":"",
+        "price":"",
+        "bounty":"",
+        "ai":"",
+        
+        "life":"",
+        "lifemax":"",
+        "attackDamage":"",
+        "attackTime":"",
+        "bulletTime":"",
+        "armour":"",
+        "penetration":"",
+        "range":"",
+
+        
+        "aerial":"",
+        "camo":"",
+        "antiAerial":"",
+        "antiCamo":""
+    }
+
+
+}

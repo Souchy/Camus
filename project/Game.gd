@@ -21,6 +21,7 @@ func _ready():
 	#$Team2/Towers/TowerGun2.queue_free()
 	#AI = PlayerAI.new();
 	#add_child(AI);
+	
 	if(false): 
 		$AI.queue_free()
 	pass
