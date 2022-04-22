@@ -39,14 +39,14 @@ using namespace godot;
 
 
 #include "Game.h"
-#include "models/example.h"
-#include "models/Wompa.h"
-#include "models/EntityData.h"
-#include "models/Tower.h"
-#include "models/Unit.h"
-#include "models/Projectile.h"
-#include "models/Weapon.h"
-#include "ux/HealthBar.h"
+#include "../models/example.h"
+#include "../models/Wompa.h"
+#include "../models/EntityData.h"
+#include "../models/Tower.h"
+#include "../models/Unit.h"
+#include "../models/Projectile.h"
+#include "../models/Weapon.h"
+#include "../ux/HealthBar.h"
 
 
 /// <summary>

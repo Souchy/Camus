@@ -17,7 +17,7 @@ using namespace godot;
 #include "Weapon.h"
 #include "EntityData.h"
 #include "Unit.h"
-#include "../Game.h"
+#include "../main/Game.h"
 using namespace std;
 
 
