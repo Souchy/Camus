@@ -1,5 +1,7 @@
 out/
 src/.vs/
+build/.cmake/
+build/
 
 # Godot 4+ specific ignores
 .godot/

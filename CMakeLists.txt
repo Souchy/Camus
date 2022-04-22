@@ -148,5 +148,5 @@ endif()
 set_property(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY COMPILE_FLAGS ${GODOT_COMPILE_FLAGS})
 set_property(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY LINK_FLAGS ${GODOT_LINKER_FLAGS})
 
-# ici c'était "gdexample" avant
+# ici c'ï¿½tait "gdexample" avant
 set_property(TARGET ${PROJECT_NAME} PROPERTY OUTPUT_NAME "camus")
