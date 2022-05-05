@@ -55,7 +55,7 @@ func _on_area_3d_area_entered(area: Area3D):
 	if(area.name == "Range"): 
 		return
 	# ignore collision with own team
-	if(parent.data.team == data.team):
+	if(parent.data.getTeam() == data.getTeam()):
 		return
 	# do damage to towers and units
 	if(parent is Unit || parent is Tower || parent is Base): 
@@ -86,10 +86,10 @@ func hit(target):
 
 # Target is either DataUnit or DataTower, Bullet is DataBullet
 func damage(bullet, target):
-	var reduction = (target.armour - bullet.penetration);
+	var reduction = (target.getArmour() - bullet.penetration);
 	if(reduction < 0): 
 		reduction = 0
-	target.life -= (bullet.damage - reduction);
+	target.setLife(target.getLife() - (bullet.damage - reduction)); 
 	pass
 
 func explosion():

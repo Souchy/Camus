@@ -19,10 +19,10 @@ void Projectile::_bind_methods() {
 }
 
 Projectile::Projectile() {
-    UtilityFunctions::print("Projectile Constructor.");
+    //UtilityFunctions::print("Projectile Constructor.");
 }
 Projectile::~Projectile() {
-    UtilityFunctions::print("Projectile Destructor.");
+    //UtilityFunctions::print("Projectile Destructor.");
 }
 
 void Projectile::_ready() {

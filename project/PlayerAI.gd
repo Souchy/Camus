@@ -44,7 +44,7 @@ func buyTower():
 
 
 func buyUnits():
-	print("AI buy Units")
+	#print("AI buy Units")
 	game.buyUnits(team, null, "Unit");
 	pass
 

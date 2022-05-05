@@ -20,10 +20,10 @@ void Unit::_bind_methods() {
 }
 
 Unit::Unit() {
-	UtilityFunctions::print("Unit Constructor.");
+	UtilityFunctions::print("C++ Unit Constructor.");
 }
 Unit::~Unit() {
-	UtilityFunctions::print("Unit Destructor.");
+	UtilityFunctions::print("C++ Unit Destructor.");
 }
 
 void Unit::setData(const Ref<EntityData>& dat) {
@@ -33,10 +33,10 @@ Ref<EntityData> Unit::getData() const {
 	return data;
 }
 
-
-void Unit::_ready(){
+void Unit::_ready() {
+    UtilityFunctions::print("C++ Unit ready");
 }
 
 void Unit::_process(float delta) {
-	UtilityFunctions::print("Unit process %s", delta);
+    UtilityFunctions::print("C++ Unit process %s", delta);
 }

@@ -1,7 +1,6 @@
 
 #pragma once
 
-
 #include <godot_cpp/classes/node3d.hpp>
 #include <godot_cpp/classes/global_constants.hpp>
 #include <godot_cpp/classes/viewport.hpp>

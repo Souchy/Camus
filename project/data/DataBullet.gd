@@ -15,3 +15,6 @@ var team = 0;
 @export var explodes: bool = false
 
 @export var explosionRadius: float = 1;
+
+func getTeam():
+	return team;

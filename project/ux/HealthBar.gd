@@ -18,9 +18,9 @@ func setTeam(team: int):
 
 # source is the attacker player
 func update():
-	print("hp parent: ", parent.data.life)
-	self.scale.x = parent.data.life / parent.data.lifemax;
+	print("hp parent: ", parent.data.getLife())
+	self.scale.x = parent.data.getLife() / parent.data.getLifeMax();
 	#print("healthbar update: %s, %s " % [data.life, self.scale.x])
-	if(parent.data.life <= 0):
+	if(parent.data.getLife() <= 0):
 		parent.death()
 	pass

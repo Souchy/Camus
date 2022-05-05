@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://cxrresatc1mpm"]
 
 [ext_resource type="Script" path="res://models/Bullet.gd" id="1_sicut"]
 
@@ -16,7 +16,7 @@ height = 0.2
 [sub_resource type="SphereShape3D" id="SphereShape3D_d8o6u"]
 radius = 0.1
 
-[node name="Bullet" type="Node3D"]
+[node name="Bullet" type="Projectile"]
 script = ExtResource( "1_sicut" )
 
 [node name="Mesh" type="MeshInstance3D" parent="."]

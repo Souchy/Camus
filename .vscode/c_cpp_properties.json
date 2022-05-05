@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/godot-cpp/include",
                 "${workspaceFolder}/godot-cpp/gen/include",
-                "${workspaceFolder}/godot-cpp/include"
+                "${workspaceFolder}/godot-cpp/include",
+                "${workspaceFolder}/godot-cpp/gen/include"
             ],
             "defines": [
                 "_DEBUG",

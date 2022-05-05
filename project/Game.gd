@@ -1,4 +1,4 @@
-class_name Game extends Node3D
+class_name GameGD extends Game
 
 var team1:Team = Team.new(0);
 var team2:Team = Team.new(1);
@@ -30,7 +30,7 @@ func getTeam(team: int):
 	if(team == 0): return team1;
 	elif(team == 1): return team2;
 	
-func otherTeam(team: int):
+func otherTeamGD(team: int):
 	if(team == 0): return team2;
 	elif(team == 1): return team1;
 	pass
@@ -85,7 +85,7 @@ func getMouseWorldPos():
 func buildTower(team: Team, towerName: String):
 	var item = load("res://data/towers/"+towerName+".tscn").instantiate()
 	var t = team.team;
-	item.data.team = t;
+	item.data.setTeam(t);
 	item.team = t;
 	if(team == playerTeam):
 		# put tower in held item temporarily for placing position
@@ -97,7 +97,7 @@ func buildTower(team: Team, towerName: String):
 		# add tower directly to team 2 towers
 		get_node("Team2/Towers").add_child(item)
 		item.active = true;
-		team.gold -= item.data.cost;
+		team.gold -= item.data.getPrice();
 		team.towers.push_back(item);
 		return item;
 
@@ -105,7 +105,7 @@ func placeTower():
 	#print("placed turret at: ", mouse)
 	remove_child(heldItem);
 	get_node("Team1/Towers").add_child(heldItem);
-	playerTeam.gold -= heldItem.data.cost;
+	playerTeam.gold -= heldItem.data.getPrice();
 	playerTeam.towers.push_back(heldItem);
 	heldItem.active = true;
 	mode = modeNormal;
@@ -117,8 +117,8 @@ func buyUnits(team: Team, towerSource: Tower, unitName: String):
 	var unit = load("res://models/"+unitName+".tscn").instantiate();
 	var follow = PathFollow3D.new();
 	follow.loop = false;
-	unit.data.team = team.team;
-	team.gold -= unit.data.cost;
+	unit.data.setTeam(team.team);
+	team.gold -= unit.data.getPrice();
 	unit.active = true;
 	follow.add_child(unit);
 	path.add_child(follow);

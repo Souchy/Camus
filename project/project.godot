@@ -34,12 +34,12 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://data/DataUnit.gd"
 }, {
-"base": "Node3D",
-"class": &"Game",
+"base": "Game",
+"class": &"GameGD",
 "language": &"GDScript",
 "path": "res://Game.gd"
 }, {
-"base": "Tower",
+"base": "TowerGD",
 "class": &"Gun360",
 "language": &"GDScript",
 "path": "res://data/towers/Gun360.gd"
@@ -54,13 +54,13 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://models/Team.gd"
 }, {
-"base": "Node3D",
-"class": &"Tower",
+"base": "Tower",
+"class": &"TowerGD",
 "language": &"GDScript",
 "path": "res://models/Tower.gd"
 }, {
-"base": "Node3D",
-"class": &"Unit",
+"base": "Unit",
+"class": &"UnitGD",
 "language": &"GDScript",
 "path": "res://models/Unit.gd"
 }]
@@ -70,12 +70,12 @@ _global_script_class_icons={
 "DataBullet": "",
 "DataTower": "",
 "DataUnit": "",
-"Game": "",
+"GameGD": "",
 "Gun360": "",
 "PlayerAI": "",
 "Team": "",
-"Tower": "",
-"Unit": ""
+"TowerGD": "",
+"UnitGD": ""
 }
 
 [application]

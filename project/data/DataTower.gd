@@ -23,3 +23,4 @@ var cost = 100;
 var bounty = 1;
 
 var ai = "aggressive"; # defensive, builder, 
+

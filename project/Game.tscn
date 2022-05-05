@@ -10,7 +10,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1j8f"]
 albedo_color = Color(0.0823529, 0.52549, 0.592157, 1)
 
-[node name="Game" type="Node3D"]
+[node name="Game" type="Game"]
 script = ExtResource( "1_hqm14" )
 
 [node name="Map" parent="." instance=ExtResource( "1_yldv6" )]

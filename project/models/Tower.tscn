@@ -11,7 +11,7 @@ height = 3.0
 radius = 3.0
 height = 3.0
 
-[node name="Tower" type="Node3D"]
+[node name="Tower" type="Tower"]
 script = ExtResource( "1_882iu" )
 
 [node name="Head" type="MeshInstance3D" parent="."]

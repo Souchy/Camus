@@ -14,6 +14,8 @@ var gold = 100;
 var units = [];
 var towers = [];
 
+func getTeam():
+	return team;
 
 func _init(id: int):
 	self.team = id;

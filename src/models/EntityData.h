@@ -18,24 +18,25 @@ protected:
 private:
 	int team;
 	
-	string name;
-	int price;	// $ cost to buy
-	int bounty; // $ gain when killed
-	string ai;  // aggressive, defensive, builder, first/last/strong/weak/close
+	String name;
+	int price = 15;	// $ cost to buy
+	int bounty = 1; // $ gain when killed
+	String ai;  // aggressive, defensive, builder, first/last/strong/weak/close
 
-	double life;
-	double lifemax;
-	double armour;
-	bool aerial;
-	bool camo;
+	double life = 3.0;
+	double lifemax = life;
+	double armour = 0.0;
 
-	double attackDamage;
-	double attackTime; // how much time between attacks
-	double bulletTime; // how long a bullet lives
-	double penetration;
-	double range;
-	bool antiAerial;
-	bool antiCamo;
+	double attackDamage = 1.0;
+	double attackTime = 0.5; // how much time between attacks
+	double bulletTime = 1.0; // how long a bullet lives
+	double penetration = 0;
+	double range = 3.0;
+
+	bool aerial = false;
+	bool camo = false;
+	bool antiAerial = false;
+	bool antiCamo = false;
 
 
 public:
@@ -49,14 +50,14 @@ public:
 
 	void setTeam(int team);
 	int getTeam();
-	void setName(string name);
-	string getName();
+	void setName(String name);
+	String getName();
 	void setPrice(int price);
 	int getPrice();
 	void setBounty(int bounty);
 	int getBounty();
-	void setAI(string ai);
-	string getAI();
+	void setAI(String ai);
+	String getAI();
 
 	void setLife(double life);
 	double getLife();

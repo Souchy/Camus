@@ -28,7 +28,7 @@ height = 1.5
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_30xvo"]
 radius = 2.0
 
-[node name="Unit" type="Node3D"]
+[node name="Unit" type="Unit"]
 script = ExtResource( "1_rbfde" )
 
 [node name="Model" type="MeshInstance3D" parent="."]

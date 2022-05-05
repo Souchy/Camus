@@ -32,3 +32,10 @@ int Game::otherTeam(int team) {
 	if(team == 1) return 0;
 	else return 1;
 }
+
+/*
+Team* Game::otherTeam(int team) {
+	if(team == 1) return team1;
+	else return team2;
+}
+*/
