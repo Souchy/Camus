@@ -55,4 +55,5 @@ public:
 	bool getAerial();
 	void setCamo(bool camo);
 	bool getCamo();
+
 };
