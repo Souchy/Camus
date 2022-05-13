@@ -10,7 +10,6 @@
 using namespace godot;
 
 #include <string>
-#include "Weapon.h"
 #include "EntityData.h"
 #include "Projectile.h"
 using namespace std;

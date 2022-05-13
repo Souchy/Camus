@@ -26,6 +26,8 @@ modules = getSubdirs(corePath)
 # modules = [bar, foo, ice]
 for module in modules :
   sources += Glob(os.path.join(corePath, module, '*.cpp'))
+for module in modules :
+  sources += Glob(os.path.join(corePath, module, '*.hpp'))
 
 
 # libcamus was libgdexample

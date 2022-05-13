@@ -10,10 +10,9 @@
 using namespace godot;
 
 #include <string>
-#include "../../api/Entity.h"
-#include "../../api/TerrainEntity.h"
-#include "../../api/Weapon.h"
-#include "../units/BasicUnit.hpp"
+#include "Entity.h"
+#include "TerrainEntity.h"
+#include "Weapon.h"
 using namespace std;
 
 // Can be Towers, Units, Bases
@@ -24,8 +23,8 @@ protected:
 	static void _bind_methods();
 
 private:
-    TerrainEntity data;
-    Weapon weapon;
+    Ref<TerrainEntity> data;
+    Ref<Weapon> weapon;
 	//Game* game;
 	//list<Unit*> enemiesInArea;
 	//string soundPath = "G:/Assets/pack/kenney/kenney_impactsounds/Audio/footstep_carpet_000.ogg";
@@ -41,15 +40,15 @@ public:
 	virtual void shoot(); //void shoot(BasicUnit* target);
 	virtual void death();
 	
-	virtual void _onEntityEnteredRange(Area3D area);
-	virtual void _onEntityExitedRange(Area3D area);
-    virtual void _onEntityEnteredHitbox(Area3D area);
-    virtual void _onEntityExitedHitbox(Area3D area);
+	virtual void _onEntityEnteredRange(const Area3D area);
+	virtual void _onEntityExitedRange(const Area3D area);
+    virtual void _onEntityEnteredHitbox(const Area3D area);
+    virtual void _onEntityExitedHitbox(const Area3D area);
     
-    virtual void setData(TerrainEntity entity);
-    virtual TerrainEntity getData();
-    virtual void setWeapon(Weapon weapon);
-    virtual Weapon getWeapon();
+    void setData(Ref<TerrainEntity> entity);
+    Ref<TerrainEntity> getData();
+    void setWeapon(Ref<Weapon> weapon);
+    Ref<Weapon> getWeapon();
 };
 
 
@@ -85,27 +84,27 @@ void BattleNode::turn() {
 void BattleNode::shoot() {
 
 }
-void BattleNode::_onEntityEnteredRange(Area3D area) {
+void BattleNode::_onEntityEnteredRange(const Area3D area) {
 
 }
-void BattleNode::_onEntityExitedRange(Area3D area) {
+void BattleNode::_onEntityExitedRange(const Area3D area) {
 
 }
-void BattleNode::_onEntityEnteredHitbox(Area3D area) {
+void BattleNode::_onEntityEnteredHitbox(const Area3D area) {
 
 }
-void BattleNode::_onEntityExitedHitbox(Area3D area) {
+void BattleNode::_onEntityExitedHitbox(const Area3D area) {
 
 }
-void BattleNode::setData(TerrainEntity data){
+void BattleNode::setData(Ref<TerrainEntity> data) {
     this->data = data;
 }
-TerrainEntity BattleNode::getData() {
+Ref<TerrainEntity> BattleNode::getData() {
     return this->data;
 }
-void BattleNode::setWeapon(Weapon weapon) {
+void BattleNode::setWeapon(Ref<Weapon> weapon) {
     this->weapon = weapon;
 }
-Weapon BattleNode::getWeapon() {
+Ref<Weapon> BattleNode::getWeapon() {
     return this->weapon;
 }

@@ -37,10 +37,10 @@ public:
 	void shoot() override; //void shoot(BasicUnit* target);
 	void death() override;
 
-	void _onEntityEnteredRange(Area3D area) override;
-	void _onEntityExitedRange(Area3D area) override;
-    void _onEntityEnteredHitbox(Area3D area) override;
-    void _onEntityExitedHitbox(Area3D area) override;
+	// void _onEntityEnteredRange(Area3D area) override;
+	// void _onEntityExitedRange(Area3D area) override;
+    // void _onEntityEnteredHitbox(Area3D area) override;
+    // void _onEntityExitedHitbox(Area3D area) override;
 };
 
 void CircleTower::_bind_methods() {
@@ -57,10 +57,10 @@ void CircleTower::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("turn"), &CircleTower::turn);
 	ClassDB::bind_method(D_METHOD("shoot"), &CircleTower::shoot);
 	ClassDB::bind_method(D_METHOD("death"), &CircleTower::death);
-	ClassDB::bind_method(D_METHOD("_onEntityEnteredRange", "area"), &CircleTower::_onEntityEnteredRange);
-	ClassDB::bind_method(D_METHOD("_onEntityExitedRange", "area"), &CircleTower::_onEntityExitedRange);
-	ClassDB::bind_method(D_METHOD("_onEntityEnteredHitbox", "area"), &CircleTower::_onEntityEnteredHitbox);
-	ClassDB::bind_method(D_METHOD("_onEntityExitedHitbox", "area"), &CircleTower::_onEntityExitedHitbox);
+	// ClassDB::bind_method(D_METHOD("_onEntityEnteredRange", "area"), &CircleTower::_onEntityEnteredRange);
+	// ClassDB::bind_method(D_METHOD("_onEntityExitedRange", "area"), &CircleTower::_onEntityExitedRange);
+	// ClassDB::bind_method(D_METHOD("_onEntityEnteredHitbox", "area"), &CircleTower::_onEntityEnteredHitbox);
+	// ClassDB::bind_method(D_METHOD("_onEntityExitedHitbox", "area"), &CircleTower::_onEntityExitedHitbox);
 }
 
 void CircleTower::death() {

@@ -95,6 +95,7 @@ endif()
 
 # Get Sources
 file(GLOB_RECURSE SOURCES src/*.c**)
+file(GLOB_RECURSE SOURCES src/*.hpp)
 file(GLOB_RECURSE HEADERS include/*.h**)
 
 # Define our godot-cpp library

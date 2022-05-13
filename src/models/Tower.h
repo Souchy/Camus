@@ -13,7 +13,6 @@ using namespace godot;
 #include <string>
 #include <vector>
 #include <list>
-#include "Weapon.h"
 #include "EntityData.h"
 #include "Unit.h"
 #include "../main/Game.h"

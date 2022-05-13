@@ -7,7 +7,6 @@
 using namespace godot;
 
 void TerrainEntity::_bind_methods() {
-    
     ClassDB::bind_method(D_METHOD("getName"), &TerrainEntity::getName);
     ClassDB::bind_method(D_METHOD("setPrice", "price"), &TerrainEntity::setPrice);
     ClassDB::bind_method(D_METHOD("getPrice"), &TerrainEntity::getPrice);

@@ -36,10 +36,10 @@ public:
 	void shoot() override; //void shoot(BasicUnit* target);
 	void death() override;
 
-	void _onEntityEnteredRange(Area3D area) override;
-	void _onEntityExitedRange(Area3D area) override;
-    void _onEntityEnteredHitbox(Area3D area) override;
-    void _onEntityExitedHitbox(Area3D area) override;
+	// void _onEntityEnteredRange(Area3D area) override;
+	// void _onEntityExitedRange(Area3D area) override;
+    // void _onEntityEnteredHitbox(Area3D area) override;
+    // void _onEntityExitedHitbox(Area3D area) override;
 };
 
 void BasicTower::_bind_methods() {
@@ -56,10 +56,10 @@ void BasicTower::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("turn"), &BasicTower::turn);
 	ClassDB::bind_method(D_METHOD("shoot"), &BasicTower::shoot);
 	ClassDB::bind_method(D_METHOD("death"), &BasicTower::death);
-	ClassDB::bind_method(D_METHOD("_onEntityEnteredRange", "area"), &BasicTower::_onEntityEnteredRange);
-	ClassDB::bind_method(D_METHOD("_onEntityExitedRange", "area"), &BasicTower::_onEntityExitedRange);
-	ClassDB::bind_method(D_METHOD("_onEntityEnteredHitbox", "area"), &BasicTower::_onEntityEnteredHitbox);
-	ClassDB::bind_method(D_METHOD("_onEntityExitedHitbox", "area"), &BasicTower::_onEntityExitedHitbox);
+	// ClassDB::bind_method(D_METHOD("_onEntityEnteredRange", "area"), &BasicTower::_onEntityEnteredRange);
+	// ClassDB::bind_method(D_METHOD("_onEntityExitedRange", "area"), &BasicTower::_onEntityExitedRange);
+	// ClassDB::bind_method(D_METHOD("_onEntityEnteredHitbox", "area"), &BasicTower::_onEntityEnteredHitbox);
+	// ClassDB::bind_method(D_METHOD("_onEntityExitedHitbox", "area"), &BasicTower::_onEntityExitedHitbox);
 }
 
 void BasicTower::_ready() {
@@ -74,15 +74,15 @@ void BasicTower::turn() {
 void BasicTower::shoot() {
 
 }
-void BasicTower::_onEntityExitedRange(Area3D area) {
+// void BasicTower::_onEntityEnteredRange(Area3D area) {
 
-}
-void BasicTower::_onEntityExitedRange(Area3D area) {
+// }
+// void BasicTower::_onEntityExitedRange(Area3D area) {
 
-}
-void BasicTower::_onEntityEnteredHitbox(Area3D area) {
+// }
+// void BasicTower::_onEntityEnteredHitbox(Area3D area) {
 
-}
-void BasicTower::_onEntityExitedHitbox(Area3D area) {
+// }
+// void BasicTower::_onEntityExitedHitbox(Area3D area) {
 
-}
+// }
