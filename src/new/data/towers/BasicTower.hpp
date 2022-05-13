@@ -14,7 +14,7 @@ using namespace godot;
 #include "../../api/TerrainEntity.h"
 #include "../../api/Weapon.h"
 #include "../units/BasicUnit.hpp"
-#include "../../api/BattleEntity.hpp"
+#include "../../api/BattleNode.hpp"
 using namespace std;
 
 class BasicTower : public BattleNode {
@@ -30,18 +30,17 @@ public:
 	~BasicTower();
 
 	void _ready() override;
-	void _process(float delta) override;
+	void _process(double delta) override;
 	
 	void turn() override; //BasicUnit* turn();
-	void shoot(); //void shoot(BasicUnit* target);
-	void death();
-	
-	void _onEntityEnteredRange(Area3D area);
-	void _onEntityExitedRange(Area3D area);
-    void _onEntityEnteredHitbox(Area3D area);
-    void _onEntityExitedHitbox(Area3D area);
-};
+	void shoot() override; //void shoot(BasicUnit* target);
+	void death() override;
 
+	void _onEntityEnteredRange(Area3D area) override;
+	void _onEntityExitedRange(Area3D area) override;
+    void _onEntityEnteredHitbox(Area3D area) override;
+    void _onEntityExitedHitbox(Area3D area) override;
+};
 
 void BasicTower::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("_ready"), &BasicTower::_ready);
@@ -59,15 +58,14 @@ void BasicTower::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("death"), &BasicTower::death);
 	ClassDB::bind_method(D_METHOD("_onEntityEnteredRange", "area"), &BasicTower::_onEntityEnteredRange);
 	ClassDB::bind_method(D_METHOD("_onEntityExitedRange", "area"), &BasicTower::_onEntityExitedRange);
-	ClassDB::bind_method(D_METHOD("_onEntityEnteredHitbox", "area"), &BattleNode::_onEntityEnteredHitbox);
-	ClassDB::bind_method(D_METHOD("_onEntityExitedHitbox", "area"), &BattleNode::_onEntityExitedHitbox);
-
+	ClassDB::bind_method(D_METHOD("_onEntityEnteredHitbox", "area"), &BasicTower::_onEntityEnteredHitbox);
+	ClassDB::bind_method(D_METHOD("_onEntityExitedHitbox", "area"), &BasicTower::_onEntityExitedHitbox);
 }
 
 void BasicTower::_ready() {
     
 }
-void BasicTower::_process(float delta) {
+void BasicTower::_process(double delta) {
 
 }
 void BasicTower::turn() {

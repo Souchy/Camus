@@ -35,21 +35,21 @@ public:
 	~BattleNode();
 
 	void _ready() override;
-	void _process(float delta);
+	void _process(double delta) override;
 	
-	void turn(); //BasicUnit* turn();
-	void shoot(); //void shoot(BasicUnit* target);
-	void death();
+	virtual void turn(); //BasicUnit* turn();
+	virtual void shoot(); //void shoot(BasicUnit* target);
+	virtual void death();
 	
-	void _onEntityEnteredRange(Area3D area);
-	void _onEntityExitedRange(Area3D area);
-    void _onEntityEnteredHitbox(Area3D area);
-    void _onEntityExitedHitbox(Area3D area);
+	virtual void _onEntityEnteredRange(Area3D area);
+	virtual void _onEntityExitedRange(Area3D area);
+    virtual void _onEntityEnteredHitbox(Area3D area);
+    virtual void _onEntityExitedHitbox(Area3D area);
     
-    void setData(TerrainEntity entity);
-    TerrainEntity getData();
-    void setWeapon(Weapon weapon);
-    Weapon getWeapon();
+    virtual void setData(TerrainEntity entity);
+    virtual TerrainEntity getData();
+    virtual void setWeapon(Weapon weapon);
+    virtual Weapon getWeapon();
 };
 
 
@@ -71,13 +71,12 @@ void BattleNode::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("_onEntityExitedRange", "area"), &BattleNode::_onEntityExitedRange);
 	ClassDB::bind_method(D_METHOD("_onEntityEnteredHitbox", "area"), &BattleNode::_onEntityEnteredHitbox);
 	ClassDB::bind_method(D_METHOD("_onEntityExitedHitbox", "area"), &BattleNode::_onEntityExitedHitbox);
-
 }
 
 void BattleNode::_ready() {
 
 }
-void BattleNode::_process(float delta) {
+void BattleNode::_process(double delta) {
 
 }
 void BattleNode::turn() {
