@@ -54,7 +54,7 @@ void CircleTower::_enter_tree(){
 	BasicTower::_enter_tree();
 }
 void CircleTower::_ready() {
-	UtilityFunctions::print("C++ CircleTower ", id," ready.");
+	// UtilityFunctions::print("C++ CircleTower ", id," ready.");
     // BasicTower::_ready();
 }
 void CircleTower::_process(double delta) {
@@ -62,7 +62,7 @@ void CircleTower::_process(double delta) {
 }
 
 void CircleTower::createMesh(){
-	UtilityFunctions::print("C++ CircleTower ", id," createMesh.");
+	// UtilityFunctions::print("C++ CircleTower ", id," createMesh.");
 	MeshInstance3D* meshi = new MeshInstance3D();
 	CylinderMesh* mesh = new CylinderMesh();
 	mesh->set_bottom_radius(1);

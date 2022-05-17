@@ -54,14 +54,14 @@ void BasicTower::_enter_tree(){
 	BattleNode::_enter_tree();
 }
 void BasicTower::_ready() {
-	UtilityFunctions::print("C++ BasicTower ", id," ready.");
+	// UtilityFunctions::print("C++ BasicTower ", id," ready.");
 }
 void BasicTower::_process(double delta) {
 	// UtilityFunctions::print("C++ BasicTower process.");
 }
 
 void BasicTower::createMesh(){
-	UtilityFunctions::print("C++ BasicTower ", id," createMesh.");
+	// UtilityFunctions::print("C++ BasicTower ", id," createMesh.");
 	MeshInstance3D* meshi = new MeshInstance3D();
 	BoxMesh* mesh = new BoxMesh();
 	Vector3 v = Vector3(1,1,1);

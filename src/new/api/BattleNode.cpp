@@ -49,13 +49,13 @@ void BattleNode::_enter_tree(){
 	createMesh();
 }
 void BattleNode::_ready() {
-	UtilityFunctions::print("C++ BattleNode ", id," ready.");
+	// UtilityFunctions::print("C++ BattleNode ", id," ready.");
 }
 void BattleNode::_process(double delta) {
 }
 
 void BattleNode::createMesh(){
-	UtilityFunctions::print("C++ BattleNode ", id," createMesh.");
+	// UtilityFunctions::print("C++ BattleNode ", id," createMesh.");
 }
 void BattleNode::turn() {
 
