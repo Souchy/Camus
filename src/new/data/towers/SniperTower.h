@@ -29,6 +29,7 @@ public:
 	SniperTower();
 	~SniperTower();
 
+	void _enter_tree() override;
 	void _ready() override;
 	void _process(double delta) override;
 	

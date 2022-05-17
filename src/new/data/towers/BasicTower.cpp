@@ -49,6 +49,10 @@ BasicTower::~BasicTower(){
 
 }
 
+void BasicTower::_enter_tree(){
+	UtilityFunctions::print("C++ BasicTower ", id," enter_tree.");
+	BattleNode::_enter_tree();
+}
 void BasicTower::_ready() {
 	UtilityFunctions::print("C++ BasicTower ", id," ready.");
 }

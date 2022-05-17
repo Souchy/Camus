@@ -49,6 +49,10 @@ CircleTower::CircleTower(){
 CircleTower::~CircleTower(){
 
 }
+void CircleTower::_enter_tree(){
+	UtilityFunctions::print("C++ CircleTower ", id," enter_tree.");
+	BasicTower::_enter_tree();
+}
 void CircleTower::_ready() {
     // BasicTower::_ready();
 }

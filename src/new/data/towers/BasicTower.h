@@ -29,10 +29,11 @@ public:
 	BasicTower();
 	~BasicTower();
 
+	void _enter_tree() override;
 	void _ready() override;
 	void _process(double delta) override;
 	
-	virtual void createMesh() override;
+	void createMesh() override;
 	void turn() override; //BasicUnit* turn();
 	void shoot() override; //void shoot(BasicUnit* target);
 	void death() override;

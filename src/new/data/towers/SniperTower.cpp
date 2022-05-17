@@ -46,6 +46,9 @@ SniperTower::SniperTower(){
 SniperTower::~SniperTower(){
 
 }
+void SniperTower::_enter_tree(){
+	//UtilityFunctions::print("C++ CircleTower ", id," enter_tree.");
+}
 void SniperTower::_ready() {
     BasicTower::_ready();
 }
