@@ -17,8 +17,8 @@ using namespace std;
 
 
 void BattleNode::_bind_methods() {
-	ClassDB::bind_method(D_METHOD("_ready"), &BattleNode::_ready);
-	ClassDB::bind_method(D_METHOD("_process"), &BattleNode::_process);
+	// ClassDB::bind_method(D_METHOD("_ready"), &BattleNode::_ready);
+	// ClassDB::bind_method(D_METHOD("_process"), &BattleNode::_process);
 
 	ClassDB::bind_method(D_METHOD("getData"), &BattleNode::getData);
 	ClassDB::bind_method(D_METHOD("setData", "data"), &BattleNode::setData);
@@ -42,10 +42,10 @@ BattleNode::BattleNode(){
 }
 
 BattleNode::~BattleNode(){
-	
 }
+
 void BattleNode::_enter_tree(){
-	UtilityFunctions::print("C++ BattleNode ", id," enter_tree.");
+	// UtilityFunctions::print("C++ BattleNode ", id," enter_tree.");
 	createMesh();
 }
 void BattleNode::_ready() {

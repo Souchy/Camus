@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://mxmv0jqjgljj"]
+[gd_scene load_steps=7 format=3 uid="uid://mxmv0jqjgljj"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_hqm14"]
 [ext_resource type="PackedScene" uid="uid://dd3gdvh51i3gu" path="res://data/maps/map1.tscn" id="1_yldv6"]
 [ext_resource type="PackedScene" uid="uid://dobchwbnsbvwt" path="res://ux/GameHud.tscn" id="4_50okj"]
-[ext_resource type="Script" path="res://BasicTower.gd" id="5_8mugn"]
 [ext_resource type="Script" path="res://PlayerAI.gd" id="5_rg0f3"]
-[ext_resource type="Script" path="res://CircleTower.gd" id="6_p6om2"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5ux45"]
 
@@ -53,8 +51,6 @@ script = ExtResource( "5_rg0f3" )
 
 [node name="BasicTower" type="BasicTower" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81297, 6.36425, 0.0361686)
-script = ExtResource( "5_8mugn" )
 
 [node name="CircleTower" type="CircleTower" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.744, 6, -3.62489)
-script = ExtResource( "6_p6om2" )

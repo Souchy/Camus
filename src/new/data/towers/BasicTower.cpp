@@ -23,8 +23,8 @@ using namespace std;
 
 
 void BasicTower::_bind_methods() {
-	ClassDB::bind_method(D_METHOD("_ready"), &BasicTower::_ready);
-	ClassDB::bind_method(D_METHOD("_process"), &BasicTower::_process);
+	// ClassDB::bind_method(D_METHOD("_ready"), &BasicTower::_ready);
+	// ClassDB::bind_method(D_METHOD("_process"), &BasicTower::_process);
 
 	ClassDB::bind_method(D_METHOD("getData"), &BasicTower::getData);
 	ClassDB::bind_method(D_METHOD("setData", "data"), &BasicTower::setData);
@@ -43,14 +43,14 @@ void BasicTower::_bind_methods() {
 }
 
 BasicTower::BasicTower(){
-	UtilityFunctions::print("C++ BasicTower ", id," constructor.");
+	// UtilityFunctions::print("C++ BasicTower ", id," constructor.");
 }
 BasicTower::~BasicTower(){
 
 }
 
 void BasicTower::_enter_tree(){
-	UtilityFunctions::print("C++ BasicTower ", id," enter_tree.");
+	// UtilityFunctions::print("C++ BasicTower ", id," enter_tree.");
 	BattleNode::_enter_tree();
 }
 void BasicTower::_ready() {
@@ -59,12 +59,14 @@ void BasicTower::_ready() {
 void BasicTower::_process(double delta) {
 	// UtilityFunctions::print("C++ BasicTower process.");
 }
+
 void BasicTower::createMesh(){
 	UtilityFunctions::print("C++ BasicTower ", id," createMesh.");
 	MeshInstance3D* meshi = new MeshInstance3D();
 	BoxMesh* mesh = new BoxMesh();
 	Vector3 v = Vector3(1,1,1);
 	mesh->set_size(v);
+	meshi->set_mesh(mesh);
 	meshi->set_name("bodyMesh");
     this->add_child(meshi);
 }

@@ -44,21 +44,23 @@ void CircleTower::_bind_methods() {
 
 
 CircleTower::CircleTower(){
-	UtilityFunctions::print("C++ CircleTower ", id," constructor.");
+	// UtilityFunctions::print("C++ CircleTower ", id," constructor.");
 }
 CircleTower::~CircleTower(){
-
 }
+
 void CircleTower::_enter_tree(){
-	UtilityFunctions::print("C++ CircleTower ", id," enter_tree.");
+	// UtilityFunctions::print("C++ CircleTower ", id," enter_tree.");
 	BasicTower::_enter_tree();
 }
 void CircleTower::_ready() {
+	UtilityFunctions::print("C++ CircleTower ", id," ready.");
     // BasicTower::_ready();
 }
 void CircleTower::_process(double delta) {
     // BasicTower::_process(delta);
 }
+
 void CircleTower::createMesh(){
 	UtilityFunctions::print("C++ CircleTower ", id," createMesh.");
 	MeshInstance3D* meshi = new MeshInstance3D();
