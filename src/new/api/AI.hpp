@@ -1,3 +1,15 @@
+class AI {
+public:
+AI();
+~AI();
+};
+
+AI::AI() {
+
+}
+AI::~AI() {
+
+}
 
 
 /*

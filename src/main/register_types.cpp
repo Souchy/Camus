@@ -47,15 +47,16 @@ using namespace godot;
 #include "../models/Projectile.h"
 #include "../ux/HealthBar.h"
 
-#include "../new/api/AI.hpp"
-#include "../new/api/BattleNode.hpp"
+// #include "../new/api/AI.hpp"
 #include "../new/api/Entity.h"
-#include "../new/api/Target.h"
 #include "../new/api/TerrainEntity.h"
+#include "../new/api/Target.h"
 #include "../new/api/Weapon.h"
+#include "../new/api/BattleNode.h"
 #include "../new/data/Base.hpp"
-#include "../new/data/towers/BasicTower.hpp"
-#include "../new/data/towers/CircleTower.hpp"
+#include "../new/data/towers/BasicTower.h"
+#include "../new/data/towers/CircleTower.h"
+#include "../new/data/towers/SniperTower.h"
 
 /// <summary>
 /// Register my library's types
@@ -72,12 +73,14 @@ void register_types() {
 	ClassDB::register_class<HealthBar>();
 
 	ClassDB::register_class<Entity>();
+	// ClassDB::register_class<Target>();
 	ClassDB::register_class<TerrainEntity>();
 	ClassDB::register_class<Weapon>();
 	ClassDB::register_class<BattleNode>();
-	//ClassDB::register_class<Base>();
+	// ClassDB::register_class<Base>();
 	ClassDB::register_class<BasicTower>();
 	ClassDB::register_class<CircleTower>();
+	ClassDB::register_class<SniperTower>();
 }
 
 /// <summary>

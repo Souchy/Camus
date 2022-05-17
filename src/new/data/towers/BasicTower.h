@@ -14,7 +14,7 @@ using namespace godot;
 #include "../../api/TerrainEntity.h"
 #include "../../api/Weapon.h"
 #include "../units/BasicUnit.hpp"
-#include "../../api/BattleNode.hpp"
+#include "../../api/BattleNode.h"
 using namespace std;
 
 class BasicTower : public BattleNode {
@@ -32,6 +32,7 @@ public:
 	void _ready() override;
 	void _process(double delta) override;
 	
+	virtual void createMesh() override;
 	void turn() override; //BasicUnit* turn();
 	void shoot() override; //void shoot(BasicUnit* target);
 	void death() override;
@@ -42,6 +43,7 @@ public:
     // void _onEntityExitedHitbox(Area3D area) override;
 };
 
+/*
 void BasicTower::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("_ready"), &BasicTower::_ready);
 	ClassDB::bind_method(D_METHOD("_process"), &BasicTower::_process);
@@ -74,6 +76,8 @@ void BasicTower::turn() {
 void BasicTower::shoot() {
 
 }
+*/
+
 // void BasicTower::_onEntityEnteredRange(Area3D area) {
 
 // }

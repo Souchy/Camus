@@ -14,15 +14,15 @@ protected:
 	static void _bind_methods();
 
 private:
-    TerrainEntity entity;
+    Ref<TerrainEntity> entity;
     godot::Vector3 pos;
 
 public:
 	Target();
 	~Target();
 
-    void setEntity(TerrainEntity entity);
-    TerrainEntity getEntity();
+    void setEntity(Ref<TerrainEntity> entity);
+    Ref<TerrainEntity> getEntity();
         
     float getX();
     float getY();

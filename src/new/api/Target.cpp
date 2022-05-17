@@ -21,28 +21,28 @@ Target::~Target() {
 
 // --
 
-void Target::setEntity(TerrainEntity entity) {
+void Target::setEntity(Ref<TerrainEntity> entity) {
     this->entity = entity;
 }
-TerrainEntity Target::getEntity() {
+Ref<TerrainEntity> Target::getEntity() {
     return entity;
 }
 
 float Target::getX() {
-    if(this->entity.getActive()){
-        return entity.getPos().x;
+    if(this->entity.ptr()->getActive()){
+        return this->entity.ptr()->getPos().x;
     }
     return this->pos.x;
 }
 float Target::getY() {
-    if(this->entity.getActive()){
-        return entity.getPos().x;
+    if(this->entity.ptr()->getActive()){
+        return entity.ptr()->getPos().x;
     }
     return this->pos.y;
 }
 float Target::getZ() {
-    if(this->entity.getActive()){
-        return entity.getPos().x;
+    if(this->entity.ptr()->getActive()){
+        return entity.ptr()->getPos().x;
     }
     return this->pos.z;
 }

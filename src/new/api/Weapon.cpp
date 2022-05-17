@@ -34,7 +34,7 @@ Weapon::~Weapon() {
 
 // --
 
-void shoot(TerrainEntity source) { //, Positional target) {
+void shoot(Ref<TerrainEntity> source) { //, Positional target) {
 
 }
 

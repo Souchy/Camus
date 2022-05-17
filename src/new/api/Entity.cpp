@@ -1,13 +1,13 @@
-#include "Entity.h"
+
 #include <godot_cpp/classes/global_constants.hpp>
-#include <godot_cpp/classes/node3d.hpp>
-#include <godot_cpp/classes/viewport.hpp>
 #include <godot_cpp/core/binder_common.hpp>
-#include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/classes/ref_counted.hpp>
 using namespace godot;
 
-void Entity::_bind_methods()
-{
+#include "Entity.h"
+// ----------------------------------------------------------------------------
+
+void Entity::_bind_methods() {
     ClassDB::bind_method(D_METHOD("setTeamId", "teamId"), &Entity::setTeamId);
     ClassDB::bind_method(D_METHOD("getTeamId"), &Entity::getTeamId);
     ClassDB::bind_method(D_METHOD("setName", "name"), &Entity::setName);

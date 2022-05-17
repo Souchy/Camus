@@ -52,5 +52,5 @@ public:
 	bool getAntiCamo();
 
     // 
-    void shoot(TerrainEntity source);
+    void shoot(Ref<TerrainEntity> source);
 };

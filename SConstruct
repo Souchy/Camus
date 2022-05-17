@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+import SCons
 
 env = SConscript("godot-cpp/SConstruct")
 
@@ -14,20 +15,34 @@ env = SConscript("godot-cpp/SConstruct")
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=["src/"]) # , "src/data/", "src/models/"])
-sources = Glob("src/*.cpp")
+# sources = Glob("src/*.cpp")
+
+def GlobRecursive(pattern, node='.'):
+    # env['CCCOMSTR'] = "Compiling $node"
+    print("Globing " + str(node))
+    results = []
+    for f in Glob(str(node) + '/*', source=True):
+        if type(f) is SCons.Node.FS.Dir:
+            results += GlobRecursive(pattern, f)
+    results += Glob(str(node) + '/' + pattern, source=True)
+    return results
+
+sources = GlobRecursive("*.cpp", "src")
+# sources += GlobRecursive("*.hpp", "src")
+# print("Globbed " + str(sources))
 
 # recursively add all source from src/ folders
-def getSubdirs(abs_path_dir) :  
-    lst = [ name for name in os.listdir(abs_path_dir) if os.path.isdir(os.path.join(abs_path_dir, name)) and name[0] != '.' ]
-    lst.sort()
-    return lst
-corePath = 'src'
-modules = getSubdirs(corePath)
-# modules = [bar, foo, ice]
-for module in modules :
-  sources += Glob(os.path.join(corePath, module, '*.cpp'))
-for module in modules :
-  sources += Glob(os.path.join(corePath, module, '*.hpp'))
+# def getSubdirs(abs_path_dir) :  
+#     lst = [ name for name in os.listdir(abs_path_dir) if os.path.isdir(os.path.join(abs_path_dir, name)) and name[0] != '.' ]
+#     lst.sort()
+#     return lst
+# corePath = 'src'
+# modules = getSubdirs(corePath)
+# # modules = [bar, foo, ice]
+# for module in modules :
+#   sources += Glob(os.path.join(corePath, module, '*.cpp'))
+# for module in modules :
+#   sources += Glob(os.path.join(corePath, module, '*.hpp'))
 
 
 # libcamus was libgdexample

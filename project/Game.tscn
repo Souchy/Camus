@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://mxmv0jqjgljj"]
+[gd_scene load_steps=9 format=3 uid="uid://mxmv0jqjgljj"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_hqm14"]
 [ext_resource type="PackedScene" uid="uid://dd3gdvh51i3gu" path="res://data/maps/map1.tscn" id="1_yldv6"]
 [ext_resource type="PackedScene" uid="uid://dobchwbnsbvwt" path="res://ux/GameHud.tscn" id="4_50okj"]
+[ext_resource type="Script" path="res://BasicTower.gd" id="5_8mugn"]
 [ext_resource type="Script" path="res://PlayerAI.gd" id="5_rg0f3"]
+[ext_resource type="Script" path="res://CircleTower.gd" id="6_p6om2"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5ux45"]
 
@@ -11,9 +13,11 @@
 albedo_color = Color(0.0823529, 0.52549, 0.592157, 1)
 
 [node name="Game" type="Game"]
+transform = Transform3D(0.931021, -0.20955, -0.29881, 0.328449, 0.838044, 0.435664, 0.159123, -0.503756, 0.849064, -1.71453, 0, 5.33084)
 script = ExtResource( "1_hqm14" )
 
 [node name="Map" parent="." instance=ExtResource( "1_yldv6" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18309, 3.72314, -4.80061)
 
 [node name="Team1" type="Node" parent="."]
 
@@ -46,3 +50,11 @@ surface_material_override/0 = SubResource( "StandardMaterial3D_y1j8f" )
 
 [node name="AI" type="Node" parent="."]
 script = ExtResource( "5_rg0f3" )
+
+[node name="BasicTower" type="BasicTower" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81297, 6.36425, 0.0361686)
+script = ExtResource( "5_8mugn" )
+
+[node name="CircleTower" type="CircleTower" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.744, 6, -3.62489)
+script = ExtResource( "6_p6om2" )
