@@ -9,6 +9,8 @@
 #include <godot_cpp/classes/cylinder_mesh.hpp>
 #include <godot_cpp/classes/cylinder_mesh.hpp>
 #include <godot_cpp/classes/area3d.hpp>
+#include <godot_cpp/classes/json.hpp>
+#include <godot_cpp/classes/file.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
 using namespace godot;
 
@@ -56,6 +58,13 @@ void CircleTower::_enter_tree(){
 void CircleTower::_ready() {
 	// UtilityFunctions::print("C++ CircleTower ", id," ready.");
     // BasicTower::_ready();
+	JSON json;
+	// godot::String s = json.stringify(this);
+
+	File file;
+	file.open("circleTower.json", File::WRITE);
+	file.store_string(json.stringify(this, "\t"));
+	file.close();
 }
 void CircleTower::_process(double delta) {
     // BasicTower::_process(delta);

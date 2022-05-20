@@ -24,7 +24,7 @@ private:
 	double penetration = 0;
 	double range = 3.0;
 	//double bulletTime = 1.0; // how long a bullet lives
-    double bulletTravelTimeBonus; 
+    double bulletTravelTimeBonus = 0.0; 
 
 	bool antiAerial = false;
 	bool antiCamo = false;

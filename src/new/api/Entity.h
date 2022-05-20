@@ -6,7 +6,7 @@
 using namespace godot;
 
 
-class Entity : public RefCounted {
+class Entity : public RefCounted, public Variant {
 	GDCLASS(Entity, RefCounted);
 
 protected:

@@ -9,6 +9,8 @@
 #include <godot_cpp/classes/cylinder_mesh.hpp>
 #include <godot_cpp/classes/box_mesh.hpp>
 #include <godot_cpp/classes/area3d.hpp>
+#include <godot_cpp/classes/json.hpp>
+#include <godot_cpp/classes/file.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
 using namespace godot;
 
@@ -55,6 +57,15 @@ void BasicTower::_enter_tree(){
 }
 void BasicTower::_ready() {
 	// UtilityFunctions::print("C++ BasicTower ", id," ready.");
+	JSON json;
+	//godot::String s = json.stringify(this, "\t");
+	
+	File file;
+	file.open("basicTower.json", File::WRITE);
+	file.store_string(json.stringify(this, "\t"));
+	file.store_string(json.stringify(this->getData(), "\t"));
+	file.store_string(json.stringify(this->getWeapon(), "\t"));
+	file.close();
 }
 void BasicTower::_process(double delta) {
 	// UtilityFunctions::print("C++ BasicTower process.");

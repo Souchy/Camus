@@ -38,7 +38,19 @@ void BattleNode::_bind_methods() {
 
 BattleNode::BattleNode(){
 	id = BattleNode::idCounter();
-	// UtilityFunctions::print("C++ BattleNode ", id, " constructor.");
+	UtilityFunctions::print("C++ BattleNode ", id, " constructor.");
+	//TerrainEntity* e = this->data.ptr();
+	//e = new TerrainEntity();
+	//Weapon* w = this->weapon.ptr();
+	//w = new Weapon();
+
+	// this->data.set_obj(new TerrainEntity());
+	// this->data = new TerrainEntity();
+	TerrainEntity e;
+	this->data = e;
+
+	Weapon* w = new Weapon();
+	this->weapon = new Ref(w);
 }
 
 BattleNode::~BattleNode(){
