@@ -10,9 +10,6 @@ material = SubResource( "CanvasItemMaterial_m38gs" )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( "1_swdge" )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="DebugLabels" type="VBoxContainer" parent="."]
 offset_left = 30.0
@@ -57,42 +54,42 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="BuildButtons"]
-offset_right = 48.0
-offset_bottom = 32.0
+offset_right = 38.0
+offset_bottom = 31.0
 text = "gun"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button2" type="Button" parent="BuildButtons"]
-offset_left = 52.0
-offset_right = 100.0
-offset_bottom = 32.0
+offset_left = 42.0
+offset_right = 78.0
+offset_bottom = 31.0
 text = "360"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button3" type="Button" parent="BuildButtons"]
-offset_left = 104.0
-offset_right = 152.0
-offset_bottom = 32.0
+offset_left = 82.0
+offset_right = 90.0
+offset_bottom = 31.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button4" type="Button" parent="BuildButtons"]
-offset_left = 156.0
-offset_right = 204.0
-offset_bottom = 32.0
+offset_left = 94.0
+offset_right = 102.0
+offset_bottom = 31.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button5" type="Button" parent="BuildButtons"]
-offset_left = 208.0
-offset_right = 256.0
-offset_bottom = 32.0
+offset_left = 106.0
+offset_right = 147.0
+offset_bottom = 31.0
 text = "Unit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,12 +107,12 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="UpgradeButtons"]
-offset_right = 48.0
+offset_right = 8.0
 offset_bottom = 32.0
 
 [node name="Button2" type="Button" parent="UpgradeButtons"]
-offset_left = 52.0
-offset_right = 100.0
+offset_left = 12.0
+offset_right = 20.0
 offset_bottom = 32.0
 
 [node name="lblGold" type="Label" parent="."]
